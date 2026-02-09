@@ -1,0 +1,41 @@
+[
+    {
+        "ID": "TEST-1",
+        "CapabilityName": "Thermal Analysis",
+        "PM": "True",
+        "CAL": "True",
+        "Equipment": "Test Equipment 1",
+        "PMby": "Vendor Service",
+        "Frequency": "2",
+        "ServiceTime": "3",
+        "EquipmentCode": "TEST-001",
+        "Action": "Test calibration and maintenance",
+        "DocumentCode": "DOC-001"
+    },
+    {
+        "ID": "TEST-2",
+        "CapabilityName": "Microscopy",
+        "PM": "False",
+        "CAL": "True",
+        "Equipment": "Test Microscope",
+        "PMby": "Self PM in-house",
+        "Frequency": "1",
+        "ServiceTime": "1",
+        "EquipmentCode": "TEST-002",
+        "Action": "Annual calibration",
+        "DocumentCode": "DOC-002"
+    },
+    {
+        "ID": "TEST-3",
+        "CapabilityName": "Spectroscopy",
+        "PM": "True",
+        "CAL": "False",
+        "Equipment": "Test Spectrometer",
+        "PMby": "Vendor Service",
+        "Frequency": "4",
+        "ServiceTime": "2",
+        "EquipmentCode": "TEST-003",
+        "Action": "Quarterly maintenance",
+        "DocumentCode": "DOC-003"
+    }
+]

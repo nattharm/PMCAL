@@ -1,0 +1,114 @@
+﻿
+> temp_app@0.0.0 lint
+> eslint .
+
+
+C:\Users\nattharm\Desktop\PMCAL\reassemble_master_data.js
+  14:32  error  'process' is not defined  no-undef
+  36:32  error  'process' is not defined  no-undef
+
+C:\Users\nattharm\Desktop\PMCAL\src\context\LabContext.jsx
+   72:13  error  Unexpected lexical declaration in case block                                                                                    no-case-declarations
+   82:13  error  Unexpected lexical declaration in case block                                                                                    no-case-declarations
+  221:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\nattharm\Desktop\PMCAL\src\data\mockData.js
+  1999:9  error  Duplicate key 'PM'      no-dupe-keys
+  2000:9  error  Duplicate key 'CAL'     no-dupe-keys
+  2001:9  error  Duplicate key 'Action'  no-dupe-keys
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Dashboard\AbnormalityView.jsx
+  126:138  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  124 |                                             </div>
+  125 |                                             <p className="text-xs text-slate-500 font-medium">
+> 126 |                                                 {report.Capability} โ€ข {report.EquipmentCode} โ€ข Reported on {new Date(report.CreatedAt || Date.now()).toLocaleDateString()}
+      |                                                                                                                                          ^^^^^^^^^^ Cannot call impure function
+  127 |                                             </p>
+  128 |                                         </div>
+  129 |  react-hooks/purity
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Dashboard\DashboardView.jsx
+  8:29  error  'isBefore' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Dashboard\KPIMetrics.jsx
+  10:9  error  'totalEvents' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Dashboard\TroubleshootingView.jsx
+  1:27  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Dashboard\UpdateModal.jsx
+  44:11  error  'isOverdue' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Planning\PlanningView.jsx
+    8:28  error  'endOfMonth' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+   71:21  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  69 |             PM: masterItem.PM,
+  70 |             CAL: masterItem.CAL,
+> 71 |             tempId: Date.now()
+     |                     ^^^^^^^^^^ Cannot call impure function
+  72 |         };
+  73 |         setStagingItems([...stagingItems, newItem]);
+  74 |     };  react-hooks/purity
+  148:11  error  'handleDragOver' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    no-unused-vars
+  473:66  error  'idx' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Registration\RegisterForm.jsx
+  10:36  error  'bulkImportMaster' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+  32:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  30 |         if (formData.CapabilityName) {
+  31 |             const filtered = equipmentMaster.filter(e => e.CapabilityName === formData.CapabilityName);
+> 32 |             setFilteredEquipments(filtered);
+     |             ^^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  33 |         } else {
+  34 |             setFilteredEquipments([]);
+  35 |         }                                                 react-hooks/set-state-in-effect
+  43:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  41 |             const selected = equipmentMaster.find(e => e.EquipmentName === formData.Equipment);
+  42 |             if (selected) {
+> 43 |                 setFormData(prev => ({
+     |                 ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  44 |                     ...prev,
+  45 |                     EquipmentCode: selected.EquipmentCode,
+  46 |                     DocumentCode: selected.DocumentCode  react-hooks/set-state-in-effect
+
+C:\Users\nattharm\Desktop\PMCAL\src\modules\Troubleshooting\TroubleshootingForm.jsx
+  15:39  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  13 |
+  14 |     const [formData, setFormData] = useState({
+> 15 |         id: `CASE-${Math.floor(1000 + Math.random() * 9000)}`,
+     |                                       ^^^^^^^^^^^^^ Cannot call impure function
+  16 |         Title: '',
+  17 |         Date: new Date().toISOString().split('T')[0],
+  18 |         CapabilityName: '',  react-hooks/purity
+
+C:\Users\nattharm\Desktop\PMCAL\update_capabilities.js
+   2:12  error  'require' is not defined                                                               no-undef
+   3:14  error  'require' is not defined                                                               no-undef
+   5:28  error  '__dirname' is not defined                                                             no-undef
+  28:11  error  'regex' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+โ– 25 problems (25 errors, 0 warnings)
+
