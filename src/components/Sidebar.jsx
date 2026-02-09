@@ -129,7 +129,7 @@ export default function Sidebar({ active, onNavigate }) {
     return (
         <div className="w-64 gradient-atc text-white flex flex-col h-full shadow-xl relative z-20">
             <div className="p-6 border-b border-white/20">
-                <h1 className="text-xl font-bold tracking-tight text-white">ATC SMART LAB</h1>
+                <h1 className="text-xl font-bold tracking-tight text-white">ATC SMART LAB V 1.0.0</h1>
                 <p className="text-[10px] text-white/80 uppercase tracking-widest mt-1">Smart Management Portal</p>
             </div>
 

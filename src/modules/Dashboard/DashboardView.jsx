@@ -286,7 +286,7 @@ export default function DashboardView({ onNavigate }) {
             <div className="gradient-atc p-6 rounded-xl shadow-lg">
                 <div className="flex justify-between items-center text-white">
                     <div>
-                        <h2 className="text-2xl font-bold">ATC SMART LAB</h2>
+                        <h2 className="text-2xl font-bold">ATC SMART LAB V 1.0.0</h2>
                         <p className="text-sm text-white/90 mt-1">Annual PM/Calibration Schedule Dashboard</p>
                     </div>
                     <div className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2">
